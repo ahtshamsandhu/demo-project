@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class teacher extends Model {
     static associate(models) {
-      // define association here
+      teacher.belongsTo(models.course)
     }
   }
   teacher.init({
