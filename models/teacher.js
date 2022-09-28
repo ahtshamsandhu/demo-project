@@ -4,9 +4,6 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class teacher extends Model {
-    static associate(models) {
-      // define association here
-    }
   }
   teacher.init({
     firstName: DataTypes.STRING,
@@ -20,3 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   });
   return teacher;
 };
+
+      // studentcourse.belongsTo(models.student, {foreignKey:'studentid',constraints:false});
+      // studentcourse.belongsTo(models.course, {foreignKey:'courseid',constraints:false});
