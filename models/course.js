@@ -5,8 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class course extends Model {
     static associate(models) {
-      course.hasMany(models.teacher);
-      course.belongsToMany(models.student, {through: 'studentcourse'});
+      //course.belongsToMany(models.teacher, {through: 'teachercourse'});
+      //course.belongsToMany(models.student, {through: 'studentcourse'});
+     //course.hasMany(models.studentcourse, {foreignKey: 'courseid'})
+     //course.belongsTo(models.studentcourse);
+     course.hasMany(models.studentcourse, {foreignKey:'courseid',constraints:false});
     }
   }
   course.init({
